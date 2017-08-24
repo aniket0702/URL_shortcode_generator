@@ -1,1 +1,11 @@
-<h1>Hello there</h1>
+<div style="width: 800px; margin: 0 auto;">
+  <h1>Hello there</h1>
+
+  <form  action="." method="post">
+    {% csrf_token%}
+      <!-- <input name="url" type="text" placeholder="shorten your url" /> -->
+      {{ form.as_p }}
+      <input type="submit"  value="Shorten">
+  </form>
+
+</div>
