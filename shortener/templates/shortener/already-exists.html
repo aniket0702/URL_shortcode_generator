@@ -1,11 +1,12 @@
 {% extends 'shortener/base.html'%}
 {% block content%}
 <div style="width: 800px; margin: 0 auto;">
-<h1>Exists Already!</h1>
-{{ object.url}}
+<h3 class="cover-heading">Exists Already!</h3>
 <br>
-<a href="{{object.url}}">{{ object.get_short_url }}</a>
+<h2 class = "cover-heading"><p>Link: {{object.get_short_url}}</p></h2>
+<a class="btn btn-primary btn-link" href="{{object.url}}">Go to page</a>
 <br>
-<a class="btn btn-primary btn-sm" href="/">+ New</a>
+<br>
+<a class="btn btn-m btn-secondary" href="/">+ New</a>
 </div>
 {%endblock content%}

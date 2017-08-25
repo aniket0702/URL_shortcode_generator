@@ -2,13 +2,20 @@
 <html>
 <head>
   <title>URL Shortener</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css">
 </head>
 
 <body>
-{% block content %}
-{% endblock content%}
+  <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+          {% block content %}
+          {% endblock content%}
+        </div>
+      </div>
+    </div>
 </body>
 </html>
