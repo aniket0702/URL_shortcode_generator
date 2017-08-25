@@ -14,14 +14,17 @@ class SubmitUrlForm(forms.Form):
             url_validator(url)
         except:
             value_1_invalid = True
+
+        if ".com" in url == False:
+            raise forms.ValidationError("No .com")
         value_2_url = "http://"+url
         try:
-            url_validator(url)
+            url_validator(value_2_url)
         except:
             value_2_invalid = True
 
-        if not ".com" in url and not value_1_invalid and not value_2_invalid:
-            raise forms.ValidationError("No .com")
+        if not value_1_invalid and not value_2_invalid:
+            raise forms.ValidationError("No http")
         return cleaned_data
 
     # def clean_url(self):
