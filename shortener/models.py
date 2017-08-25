@@ -29,7 +29,7 @@ class KirrURL(models.Model):
     timestamp = models.DateTimeField(auto_now_add =True )#when the field was created
     updated = models.DateTimeField(auto_now =True )#when the field was last created
     active  = models.BooleanField(default = True)
-    # empty_datetime = models.DateTimeField(auto_now = False,auto_now_add=False)
+
 
     objects = KirrURLManager()
     some_random = KirrURLManager
@@ -42,3 +42,6 @@ class KirrURL(models.Model):
         return (str(self.url)+ "  " + str(self.shortcode))
     def __unicode__(self):
         return (str(self.url) + "  " + str(self.shortcode))
+
+    def get_short_url(self):
+        return "mysite.com:8000/{shortcode}".format(shortcode = self.shortcode)
