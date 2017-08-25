@@ -4,6 +4,7 @@ from django.http import HttpResponse,HttpResponseRedirect,Http404
 from django.views import View
 from django.shortcuts import render,get_object_or_404
 from .models import KirrURL
+from analytics.models import ClickEvent
 from .forms import SubmitUrlForm
 # Create your views here.
 class HomeView(View):
@@ -35,4 +36,5 @@ class HomeView(View):
 class URLRedirectView(View):
     def get(self,request,shortcode=None,*args,**kwargs):
         obj = get_object_or_404(KirrURL,shortcode=shortcode)
+        print(ClickEvent.object.create_event(obj))
         return HttpResponseRedirect(obj.url)
