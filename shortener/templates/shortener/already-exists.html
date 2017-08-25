@@ -1,8 +1,11 @@
+{% extends 'shortener/base.html'%}
+{% block content%}
 <div style="width: 800px; margin: 0 auto;">
-<h1>Exists</h1>
+<h1>Exists Already!</h1>
 {{ object.url}}
 <br>
 <a href="{{object.url}}">{{ object.get_short_url }}</a>
 <br>
-<a href="/">+ New</a>
+<a class="btn btn-primary btn-sm" href="/">+ New</a>
 </div>
+{%endblock content%}
